@@ -22,6 +22,9 @@ Route::resource('posts','PostController',['only'=>['create','store']]);
 
 Route::resource('posts','PostController',['only'=>['create','store','show']]);
 
+Route::resource('comments','CommentsController',['only'=>['store']]);
+
+
 
 
 
