@@ -20,6 +20,7 @@ Route::get('/','PostController@index')->name('top');
 
 Route::resource('posts','PostController',['only'=>['create','store']]);
 
+Route::resource('posts','PostController',['only'=>['create','show']]);
 
 
 

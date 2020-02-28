@@ -18,10 +18,10 @@
                         <input
                             id="title"
                             name="title"
-                            class=""form-control {{ $errors->has('title') ? 'is-invalid' : '' }}"
+                            class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}"
                             value="{{ old('title') }}"
                             type="text"
-                            >
+                        >
 
                             @if($errors->has('title'))
                                 <div class="invalid-feedback">
