@@ -17,7 +17,7 @@
                         {!! nl2br(e($post->body)) !!}
                     </p>
                     
-                    <a class="card-link" href="{{ route('posts.show',['post=>$post'])}}">
+                    <a class="card-link" href="{{ route('posts.show',['post'=>$post])}}">
                         続きを読む
                     </a>
         
