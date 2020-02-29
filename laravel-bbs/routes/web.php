@@ -18,13 +18,9 @@ Route::get('/', function () {
 
 Route::get('/','PostController@index')->name('top');
 
-Route::resource('posts','PostController',['only'=>['create','store']]);
-
-Route::resource('posts','PostController',['only'=>['create','store','show']]);
+Route::resource('posts','PostController',['only'=>['create','store','show','edit','update']]);
 
 Route::resource('comments','CommentsController',['only'=>['store']]);
-
-
 
 
 
