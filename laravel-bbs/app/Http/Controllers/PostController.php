@@ -8,7 +8,7 @@ use App\Post;
 class PostController extends Controller
 {
     public function index() {
-    $posts = Post::orderBy('created_at','desc')->get();
+    $posts = Post::orderBy('created_at','desc')->paginate(10);
 
         return view('posts.index',['posts'=>$posts]);
     }
@@ -55,7 +55,18 @@ class PostController extends Controller
         $post->fill($params)->save();
 
         return redirect()->route('posts.show',['post'=>$post]);
+    }
 
+    public function destroy($post_id) {
+        $post = Post::findorFail($post_id);
+
+        \DB::transaction(function () use ($post) {
+            $post->comments()->delete();
+            $post->delete();
+
+        });
+
+        return redirect()->route('top');
     }
 
 

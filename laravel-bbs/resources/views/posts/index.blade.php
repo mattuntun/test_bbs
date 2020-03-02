@@ -35,5 +35,8 @@
                 </div>
             </div>
         @endforeach
+        <div class="d-flex fustify-content-center mb-5">
+            {{$posts->links()}}
+        </div>
     </div>
 @endsection
